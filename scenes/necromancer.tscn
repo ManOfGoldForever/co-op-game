@@ -1,0 +1,115 @@
+[gd_scene load_steps=15 format=3 uid="uid://cxnhopmcbydor"]
+
+[ext_resource type="Script" path="res://scripts/necromancer.gd" id="1_yron3"]
+[ext_resource type="Texture2D" uid="uid://b5j3hldx3gerv" path="res://assets/character/necromancer_.png" id="2_7fi75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_260gy"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_comwg"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pli6j"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unic4"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38bba"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_087ia"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b44ad"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxovj"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enuc4"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf05r"]
+atlas = ExtResource("2_7fi75")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13pq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_260gy")
+}],
+"loop": true,
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_comwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pli6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unic4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38bba")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_087ia")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b44ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxovj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enuc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf05r")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oebw3"]
+radius = 5.0
+
+[node name="Necromancer" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(0, -12)
+collision_layer = 2
+script = ExtResource("1_yron3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_13pq6")
+animation = &"Crouch"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_oebw3")

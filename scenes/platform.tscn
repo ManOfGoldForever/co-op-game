@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy6s4umt5nuvp"]
+
+[ext_resource type="Texture2D" uid="uid://drsiw4s4gb2yk" path="res://assets/world/summer_.png" id="1_0sfc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejfk7"]
+size = Vector2(34, 8)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0sfc3")
+region_enabled = true
+region_rect = Rect2(0, 7, 32, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ejfk7")
+one_way_collision = true

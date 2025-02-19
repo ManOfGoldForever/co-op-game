@@ -1,0 +1,115 @@
+[gd_scene load_steps=15 format=3 uid="uid://dpco3aoju3tp1"]
+
+[ext_resource type="Script" path="res://scripts/warlock.gd" id="1_o8pwl"]
+[ext_resource type="Texture2D" uid="uid://0xkwq40pvi00" path="res://assets/character/warlock_.png" id="2_8gvr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86em6"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i753"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0c25"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3evk"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ro7"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wop0"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfmch"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atoga"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c83m"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s58ho"]
+atlas = ExtResource("2_8gvr8")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hn80k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86em6")
+}],
+"loop": true,
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i753")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0c25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3evk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ro7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wop0")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfmch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atoga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c83m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s58ho")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sh2j3"]
+radius = 5.0
+
+[node name="Warlock" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(0, -12)
+collision_layer = 2
+script = ExtResource("1_o8pwl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hn80k")
+animation = &"Crouch"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_sh2j3")

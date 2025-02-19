@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://clg5ufwyrn5s"]
+
+[ext_resource type="Texture2D" uid="uid://brvc5wnl28dam" path="res://art/Keyboard Letters and Symbols.png" id="1_ylbwb"]
+[ext_resource type="FontFile" uid="uid://dgkimp1r6m68i" path="res://fonts/PixelOperator8.ttf" id="2_dfsbn"]
+
+[node name="ControlsLabel" type="Node2D"]
+
+[node name="ArrowKeys" type="Node2D" parent="."]
+position = Vector2(29, 0)
+
+[node name="KeyboardLettersAndSymbols" type="Sprite2D" parent="ArrowKeys"]
+position = Vector2(103, 120)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(0, 114, 16, 14)
+
+[node name="KeyboardLettersAndSymbols2" type="Sprite2D" parent="ArrowKeys"]
+position = Vector2(103, 135)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(15, 114, 17, 14)
+
+[node name="KeyboardLettersAndSymbols3" type="Sprite2D" parent="ArrowKeys"]
+position = Vector2(87, 135)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(32, 114, 15, 14)
+
+[node name="KeyboardLettersAndSymbols4" type="Sprite2D" parent="ArrowKeys"]
+position = Vector2(119, 135)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(47, 114, 16, 14)
+
+[node name="LetterKeys" type="Node2D" parent="."]
+position = Vector2(-52, 0)
+
+[node name="KeyboardLettersAndSymbols" type="Sprite2D" parent="LetterKeys"]
+position = Vector2(103, 120)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(96, 178, 16, 15)
+
+[node name="KeyboardLettersAndSymbols2" type="Sprite2D" parent="LetterKeys"]
+position = Vector2(103, 135)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(32, 178, 16, 14)
+
+[node name="KeyboardLettersAndSymbols3" type="Sprite2D" parent="LetterKeys"]
+position = Vector2(87, 134)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(0, 145, 15, 15)
+
+[node name="KeyboardLettersAndSymbols4" type="Sprite2D" parent="LetterKeys"]
+position = Vector2(119, 135)
+texture = ExtResource("1_ylbwb")
+region_enabled = true
+region_rect = Rect2(47, 146, 17, 14)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 81.0
+offset_top = 117.0
+offset_right = 121.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("2_dfsbn")
+theme_override_font_sizes/font_size = 8
+text = "and"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 165.0
+offset_top = 117.0
+offset_right = 215.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("2_dfsbn")
+theme_override_font_sizes/font_size = 8
+text = "to move!"
